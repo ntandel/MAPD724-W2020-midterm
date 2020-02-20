@@ -8,7 +8,7 @@ class Island: GameObject
     //constructor
     init()
     {
-        super.init(imageString: "island", initialScale: 2.0)
+        super.init(imageString: "island", initialScale: 1.0)
         Start()
     }
     
@@ -21,7 +21,7 @@ class Island: GameObject
     override func CheckBounds()
     {
         // bottom boundary
-        if(self.position.y < -715)
+        if(self.position.x < -715)
         {
             self.Reset()
         }
@@ -41,14 +41,14 @@ class Island: GameObject
     
     func Move()
     {
-        self.position.y -= self.dy!
+        self.position.x -= self.dx!
     }
     
     override func Reset()
     {
-        self.position.y = 715
-        let randomX:Int = (randomSource?.nextInt(upperBound: 614))! - 307
-        self.position.x = CGFloat(randomX)
+        self.position.x = 715
+        let randomY:Int = (randomSource?.nextInt(upperBound: 614))! - 307
+        self.position.y = CGFloat(randomY)
         self.isColliding = false
     }
     
@@ -56,7 +56,7 @@ class Island: GameObject
     {
         self.zPosition = 1
         self.Reset()
-        self.dy = 5.0
+        self.dx = 5.0
     }
     
     override func Update()
