@@ -8,7 +8,7 @@ class Cloud: GameObject
     //constructor
     init()
     {
-        super.init(imageString: "cloud", initialScale: 1.0)
+        super.init(imageString: "cloud", initialScale: 0.8)
         Start()
     }
     
